@@ -1,0 +1,39 @@
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+  }
+
+  &.selected {
+    background-color: brown;
+  }
+}
+
+.black {
+  background-color: deepskyblue;
+}
+
+.white {
+  background-color: #eed4ac;
+}
+
+.available {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: green;
+  cursor: pointer;
+}
+.haveFigures {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
