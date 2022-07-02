@@ -1,21 +1,21 @@
 import { CellModel } from "../Cell";
 import { Colors } from "../Colors";
 import { Figure, FigureNames } from "./Figure";
-import blackLogo from '../../assets/black-rook.png'
-import whiteLogo from '../../assets/white-rook.png'
+import blackLogo from "../../assets/black-rook.png";
+import whiteLogo from "../../assets/white-rook.png";
 
 export class Rook extends Figure {
-    constructor(color: Colors, cell: CellModel) {
-        super(color, cell);
-        this.image = color === Colors.BLACK ? blackLogo : whiteLogo;
-        this.name = FigureNames.ROOK;
-    }
+  constructor(color: Colors, cell: CellModel) {
+    super(color, cell);
+    this.image = color === Colors.BLACK ? blackLogo : whiteLogo;
+    this.name = FigureNames.ROOK;
+  }
 
-    canMove = (target: CellModel): boolean => {
-        if (!super.canMove(target)) return false;
+  canMove = (target: CellModel): boolean => {
+    if (!super.canMove(target)) return false;
 
-        if (this.cell.isEmptyVertical(target)) return true;
-        if (this.cell.isEmptyHorizontal(target)) return true;
-        return false;
-    }
+    if (this.cell.isEmptyVertical(target)) return true;
+    if (this.cell.isEmptyHorizontal(target)) return true;
+    return false;
+  };
 }

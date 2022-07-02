@@ -2,7 +2,7 @@ import React, { FC, Fragment, useEffect, useState } from "react";
 import { BoardModel } from "../../models/Board";
 import { CellModel } from "../../models/Cell";
 import { Player } from "../../models/Player";
-import style from "./board.module.scss";
+import styles from "./board.module.scss";
 import Cell from "../Cell";
 
 interface BoardProps {
@@ -50,9 +50,9 @@ const Board: FC<BoardProps> = ({
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <h3>Current Player {currentPlayer?.color}</h3>
-      <div className={style.board}>
+      <div className={styles.board}>
         {board.cells.map((row, index) => {
           return (
             <Fragment key={index}>
