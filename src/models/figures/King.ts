@@ -14,9 +14,11 @@ export class King extends Figure {
   canMove = (target: CellModel): boolean => {
     if (!super.canMove(target)) return false;
 
-    console.log(this.cell, target);
-    if (Math.abs(this.cell.y - target.y) < 2) return true;
-    if (Math.abs(this.cell.x - target.x) < 2) return true;
+    if (
+      Math.abs(this.cell.x - target.x) < 2 &&
+      Math.abs(this.cell.y - target.y) < 2
+    )
+      return true;
     return false;
   };
 }
